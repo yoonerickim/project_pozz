@@ -2068,7 +2068,7 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #d9534f;
+  background-color: #E11000;
   border-color: #d43f3a;
 }
 .btn-danger:hover,
@@ -4351,7 +4351,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: black;
-  background-color: #ffffff;
+  background-color: white;
 }
 .jumbotron h1,
 .jumbotron .h1 {
