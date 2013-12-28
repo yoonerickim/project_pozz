@@ -26,6 +26,23 @@
 }
 
 
+/* Jumbotron
+================================= */
+
+.jumbotron {
+
+	padding: 100px;
+	text-align: center
+
+}
+
+.jumbotron2 {
+	background-image: url('../img/main-bg.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	padding: 400px 0 0px 0;
+	margin-bottom: 70px;
+}
 
 
 

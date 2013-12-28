@@ -4350,7 +4350,7 @@ a.list-group-item.active > .badge,
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;
-  color: #ffffff;
+  color: black;
   background-color: #ffffff;
 }
 .jumbotron h1,
@@ -4378,6 +4378,43 @@ a.list-group-item.active > .badge,
   }
   .jumbotron h1,
   .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
+.jumbotron2 {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: black;
+  background-color: #ffffff;
+}
+.jumbotron2 h1,
+.jumbotron2 .h1 {
+  line-height: 1;
+  color: inherit;
+}
+.jumbotron2 p {
+  line-height: 1.4;
+}
+.container .jumbotron2 {
+  border-radius: 6px;
+}
+.jumbotron2 .container {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .jumbotron2 {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .jumbotron2 {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .jumbotron2 h1,
+  .jumbotron2 .h1 {
     font-size: 63px;
   }
 }
