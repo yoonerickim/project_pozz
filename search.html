@@ -1,51 +1,359 @@
 <!DOCTYPE html>
 <html>
-  <!DOCTYPE html>
-<html>
   <head>
     <title>Pozz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/index-styles.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link href="css/search-styles.css" rel="stylesheet" media="screen">
+    <script language="javascript" type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/collapse.js"></script>
+    <script src="js/jquery.ui.effect.js"></script>
+
+    <script>
+        var collapsed = true;
+    //    var height = $('.listing').height();
+        $(document).ready(function() {
+            var pozz_height = $('.panel').height();
+            $('.panel').click(function() {
+                var divLocation = $(this).offset();
+                if($(this).height() == pozz_height) {
+                    var condition_id = "#condition-" + $(this).attr("id");
+                    var text_id = "#text-" + $(this).attr("id");
+                    var new_height = $(condition_id).height() + $(text_id).height();
+                    var description_id = "#description-" + $(this).attr("id");
+                    var new_height = $(description_id).height() + 20;
+          //          $(this).height(new_height + 10);
+//                    $(this).height(new_height + 15);
+                    $(this).animate({height:new_height});
+
+                } else if($(this).height() > pozz_height){
+                    /*  Need to calculate offset for animation */
+                    var offset = parseInt($('.listing-description').css("padding-top")) + parseInt($('.listing').css("padding-top"));
+                    var offset_height = pozz_height + offset;
+                    $(this).animate({height:offset_height});
+                }
+            });
+
+        });
+    </script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and med
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Note there is no responsive meta tag here -->
+
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
-  
+
   <body>
 
-    <!--Navbar -->
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <a class="main-logo pull-left" href="#">Pozz</a>
-        <p class="navbar-text pull-right">Sign In</p>
-      </div>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-default navbar-fixed-top"role="navigation">
+          <div class="container">
+
+            <div class="navbar-header">
+
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+                        <form class="navbar-form navbar-left" role="search">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                          </div>
+                          <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+
+              <a class="main-logo pull-right" href="#">Pozz</a>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+
+                    <a class="btn btn-danger" href="#">Pozz it</a>
+
+                    <li class="dropdown pull-left">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                          </ul>
+                    </li>
+                </ul>
+
+            </div><!--/.nav-collapse -->
+       </div><!--/.container -->
+    </div><!--/.navbar navbar-default navbar-fixed-top-->
+
+
+<div class="width:100%">
+    <!-----Categories ------>
+    <div style="width:10%; float:left; height:100%;">
+        Category <br>
+        <ul>
+            <li>Furnitures</li>
+            <li>Electronics</li>
+            <li>Books</li>
+            <li>Free items</li>
+        </ul>
     </div>
-    <!-- End navbar -->
+    
+    <!------------ Listing ---------->
+    <div style="width:80%; float:left; height:100%;">
+    <div class="product-container" id="1389">
+            <!-- Start image container -->
+            <div class="product-media-container">
+                <div class="product-media"><img src="img/product.jpg"></div>
+            </div>
+            <!-- End image container -->
+            
+            <!-- Start product information ----->
+            <div class="product-info-container" id="description-1389">
+                <!-- product title -->
+                <div class="product-info-title product-text" id="condition-1389">
+                    Brand New Logitech Keyboard
+                </div>
+                
+                <!-- Product description with overflow text -->
+                <div class="product-info-description product-text" id="text-1389">A brand new ergonomic logitech keyboard that comes with a red leather casing.  It is a full sized keyboard that could be used on any mobile device. IM me if you <span class="product-text" id="overflow-placeholder-1389">...</span> <span class="product-info-description-overflow" id="overflow-1389">are interested!  I am avaible Monday through Friday from 8:00am to 10:00pm EST.  Feel free to add me as a friend!  Also, let me know if you have any question regarding this fantastic product.
+                    This is just a for testin purpose.
+                    </span>                
+                </div> 
+                <div class="product-comment-container">
+                    <div class="product-comment-userprofile">
+                        <img src="img/profile_pic.png" id='test-trigger' class="profile-image">
+                    </div>
+                    <div class="product-comment-input-container">
+                        <input type="text" class="product-comment-input" placeholder="Ask me a question :)">
+                    </div>
+                </div>
+            </div>
+            
+            <!---------------------Start Map and Profile ------------->
+        <div class="product-options-container">
+            <!--- Start price tag ----->
+            <div class="product-price-container">$150</div>
+            <!--- End price tag ----->
+            
+            <!--- Google image icon --->
+            <div class="product-map-container">
+                    <img src="img/mapicon1.jpeg" alt="9120 NE 1st St, Bellevue WA 98004" class="map-trigger product-option" style="float:left;">
 
-    <!-- End Jumbotron -->
-
-    <!-- Main Content -->
-    <div class="container">
-
+            <a href="">Seattle, WA</a><br>
+            <a href="">U-District</a>
+            </div>
+            
+            <!---- User profile icon --->
+<!--            <img src="img/profile_pic.png" id='test-trigger' class="product-option">-->
+            
+            <!---- Instant Messaging icon ----->
+<!--            <img src="img/chat1.png" class="product-option">-->
+            
+            <!----- Product posted time ------>
+            <p class="product-posted-time product-text"><em>About an hour ago</em></p>
+        </div>
     </div>
+        
+            <div class="product-container" id="1389">
+            <!-- Start image container -->
+            <div class="product-media-container">
+                <div class="product-media"><img src="img/product.jpg"></div>
+            </div>
+            <!-- End image container -->
+            
+            <!-- Start product information ----->
+            <div class="product-info-container" id="description-1389">
+                <!-- product title -->
+                <div class="product-info-title product-text" id="condition-1389">
+                    Brand New Logitech Keyboard
+                </div>
+                
+                <!-- Product description with overflow text -->
+                <div class="product-info-description product-text" id="text-1389">A brand new ergonomic logitech keyboard that comes with a red leather casing.  It is a full sized keyboard that could be used on any mobile device. IM me if you <span class="product-text" id="overflow-placeholder-1389">...</span> <span class="product-info-description-overflow" id="overflow-1389">are interested!  I am avaible Monday through Friday from 8:00am to 10:00pm EST.  Feel free to add me as a friend!  Also, let me know if you have any question regarding this fantastic product.
+                    This is just a for testin purpose.
+                    </span>                
+                </div> 
+                <div class="product-comment-container">
+                    <div class="product-comment-userprofile">
+                        <img src="img/profile_pic.png" id='test-trigger' class="profile-image">
+                    </div>
+                    <div class="product-comment-input-container">
+                        <input type="text" class="product-comment-input" placeholder="Ask me a question :)">
+                    </div>
+                </div>
+            </div>
+            
+            <!---------------------Start Map and Profile ------------->
+        <div class="product-options-container">
+            <!--- Start price tag ----->
+            <div class="product-price-container">$150</div>
+            <!--- End price tag ----->
+            
+            <!--- Google image icon --->
+            <div class="product-map-container">
+                    <img src="img/mapicon1.jpeg" alt="9120 NE 1st St, Bellevue WA 98004" class="map-trigger product-option" style="float:left;">
 
-     <div class="callout"> 
-        <a class="btn btn-danger btn-lg">
-          Sign up for Pozz<span class="glyphicon glyphicon-arrow-right"></span>
-        </a>
+            <a href="">Seattle, WA</a><br>
+            <a href="">U-District</a>
+            </div>
+            
+            <!---- User profile icon --->
+<!--            <img src="img/profile_pic.png" id='test-trigger' class="product-option">-->
+            
+            <!---- Instant Messaging icon ----->
+<!--            <img src="img/chat1.png" class="product-option">-->
+            
+            <!----- Product posted time ------>
+            <p class="product-posted-time product-text"><em>About an hour ago</em></p>
+        </div>
+    </div>
+        
+            <div class="product-container" id="1389">
+            <!-- Start image container -->
+            <div class="product-media-container">
+                <div class="product-media"><img src="img/product.jpg"></div>
+            </div>
+            <!-- End image container -->
+            
+            <!-- Start product information ----->
+            <div class="product-info-container" id="description-1389">
+                <!-- product title -->
+                <div class="product-info-title product-text" id="condition-1389">
+                    Brand New Logitech Keyboard
+                </div>
+                
+                <!-- Product description with overflow text -->
+                <div class="product-info-description product-text" id="text-1389">A brand new ergonomic logitech keyboard that comes with a red leather casing.  It is a full sized keyboard that could be used on any mobile device. IM me if you <span class="product-text" id="overflow-placeholder-1389">...</span> <span class="product-info-description-overflow" id="overflow-1389">are interested!  I am avaible Monday through Friday from 8:00am to 10:00pm EST.  Feel free to add me as a friend!  Also, let me know if you have any question regarding this fantastic product.
+                    This is just a for testin purpose.
+                    </span>                
+                </div> 
+                <div class="product-comment-container">
+                    <div class="product-comment-userprofile">
+                        <img src="img/profile_pic.png" id='test-trigger' class="profile-image">
+                    </div>
+                    <div class="product-comment-input-container">
+                        <input type="text" class="product-comment-input" placeholder="Ask me a question :)">
+                    </div>
+                </div>
+            </div>
+            
+            <!---------------------Start Map and Profile ------------->
+        <div class="product-options-container">
+            <!--- Start price tag ----->
+            <div class="product-price-container">$150</div>
+            <!--- End price tag ----->
+            
+            <!--- Google image icon --->
+            <div class="product-map-container">
+                    <img src="img/mapicon1.jpeg" alt="9120 NE 1st St, Bellevue WA 98004" class="map-trigger product-option" style="float:left;">
+
+            <a href="">Seattle, WA</a><br>
+            <a href="">U-District</a>
+            </div>
+            
+            <!---- User profile icon --->
+<!--            <img src="img/profile_pic.png" id='test-trigger' class="product-option">-->
+            
+            <!---- Instant Messaging icon ----->
+<!--            <img src="img/chat1.png" class="product-option">-->
+            
+            <!----- Product posted time ------>
+            <p class="product-posted-time product-text"><em>About an hour ago</em></p>
+        </div>
+    </div>
+        
+            <div class="product-container" id="1389">
+            <!-- Start image container -->
+            <div class="product-media-container">
+                <div class="product-media"><img src="img/product.jpg"></div>
+            </div>
+            <!-- End image container -->
+            
+            <!-- Start product information ----->
+            <div class="product-info-container" id="description-1389">
+                <!-- product title -->
+                <div class="product-info-title product-text" id="condition-1389">
+                    Brand New Logitech Keyboard
+                </div>
+                
+                <!-- Product description with overflow text -->
+                <div class="product-info-description product-text" id="text-1389">A brand new ergonomic logitech keyboard that comes with a red leather casing.  It is a full sized keyboard that could be used on any mobile device. IM me if you <span class="product-text" id="overflow-placeholder-1389">...</span> <span class="product-info-description-overflow" id="overflow-1389">are interested!  I am avaible Monday through Friday from 8:00am to 10:00pm EST.  Feel free to add me as a friend!  Also, let me know if you have any question regarding this fantastic product.
+                    This is just a for testin purpose.
+                    </span>                
+                </div> 
+                <div class="product-comment-container">
+                    <div class="product-comment-userprofile">
+                        <img src="img/profile_pic.png" id='test-trigger' class="profile-image">
+                    </div>
+                    <div class="product-comment-input-container">
+                        <input type="text" class="product-comment-input" placeholder="Ask me a question :)">
+                    </div>
+                </div>
+            </div>
+            
+            <!---------------------Start Map and Profile ------------->
+        <div class="product-options-container">
+            <!--- Start price tag ----->
+            <div class="product-price-container">$150</div>
+            <!--- End price tag ----->
+            
+            <!--- Google image icon --->
+            <div class="product-map-container">
+                    <img src="img/mapicon1.jpeg" alt="9120 NE 1st St, Bellevue WA 98004" class="map-trigger product-option" style="float:left;">
+
+            <a href="">Seattle, WA</a><br>
+            <a href="">U-District</a>
+            </div>
+            
+            <!---- User profile icon --->
+<!--            <img src="img/profile_pic.png" id='test-trigger' class="product-option">-->
+            
+            <!---- Instant Messaging icon ----->
+<!--            <img src="img/chat1.png" class="product-option">-->
+            
+            <!----- Product posted time ------>
+            <p class="product-posted-time product-text"><em>About an hour ago</em></p>
+        </div>
+    </div>
+</div>
+        
+        
      </div>
-
-      <!-- Footer -->
-
-      <footer class="main-footer">
-
-      </footer> 
-      <!-- End footer -->
-    </div><!-- End Main Content -->
+       <div style="width:10%; float:left; height:100%;"> chat bar</div>
+    </div>
 
 
   </body>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </html>
+
+
+
+
+

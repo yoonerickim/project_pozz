@@ -1,4 +1,17 @@
 
+/* Non responsive */
+
+.container{
+  max-width: none !important;
+  width: 970px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.product-listing {
+    top:100px;
+}
+
 
 /* Logos & Icons
 ================================= Save it for later use
@@ -7,72 +20,191 @@ background: #E11000 url('../img/main-bg2.png') no-repeat 170px -180px; */
 .main-logo {
 	width: 124px;
 	height: 34px;
-	margin-left: 43%;
+	margin-left: -10px;
 	margin-top: 22px;
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
 	background: url('../img/main-logo.png') no-repeat;
 	background-size: 100%;
+}
 
+.btn-danger {
+	margin-top: 70px;
+	margin-left: 0px;
 
+}
 
-/* Media Queries
-================================= */
+.form-control {
+	margin-top: 45px;
+	width: 350px;
+}
 
-@media (max-width: 991px) {
+.btn-default {
+	margin-top: 45px;
+}
+
+.dropdown { 
+	margin-left: 150px;
+	margin-top: -58px;
+}
+
+/*nav
+=======================*/
+.navbar-header {
+	margin-left: 500px; 
+
 
 }
 
 
-@media (max-width: 767px) {
-	.navbar {
-		min-height: 60px;
-	}
-	.main-logo {
-		width: 100px;
-		margin-top: 20px;
 
-	}
-	.navbar-text {
-		font-size: 13px;
-		margin-top: 27px;
+/* List 
+=======================*/
+/* The top div container that holds all the product listing */
 
-	}
+.product-listings {
+    width: 850px;
+    position:relative;
+    left: 100px;
+    top:40px;
+}
+/* div that holds each product listing */
+.product-container {
+    border-bottom:solid;
+    border-bottom-width:1px;
+    border-bottom-color: rgb(233,233,233);
+    width:80%;
+/*    height:160px;*/
+    height:183px;
+    padding:5px;
+    float:left;
 }
 
-@media (max-width: 580px) {
-	.main-logo {
-		width: 90px;
-		margin-top: 20px;
-	}
-	.navbar-text {
-		font-size: 12px;
-		margin-top: 27px;
-	}
-
+/* div that holds the media or product image */
+.product-media-container{
+    height:100%;
+    float:left;
 }
 
-@media (max-width: 480px) {
-	.main-logo {
-		width: 82px;
-		margin-top: 20px;
-		margin-left:40%;
-	}	
-	}
+/*
+.product-media-options {
+    width:100%;  
+}
+*/
 
-@media (max-width: 380px) {
-
-	.main-logo {
-		width: 82px;
-		margin-top: 20px;
-		margin-left:34%;
-	}	
-	.navbar-text {
-		font-size: 12px;
-		margin-top: 25px;
-	}
+/* Specify the size of the product image */
+.product-media {
+    width:225px;
+    height:171px;
 }
 
+
+/* the div that holds the price, map and profile image */
+.product-options-container {
+    float:left;
+    width:26%;
+    padding:5px;
+    padding-top:2px;
+    text-align:center;
+}
+
+/* Specify the size of each product option */
+.product-option {
+    float:none;
+    width:50px;
+    height:50px;
+}
+
+/* the div that holds product price */
+.product-price-container {
+    font-size:45px;
+/*    font-size: 3.0vw;*/
+    width:100%;
+    padding-bottom:10px;
+    color: rgb(75,74,74);
+    text-align:center;
+}
+
+.product-map-container {
+    padding-left:40px;
+    padding-right:30px;
+    height:50px;
+}
+
+
+/* Specify the look and feel of the posted time of the product */
+.product-posted-time {
+    padding-top:05px;
+    font-size:15px;
+    clear:both;
+}
+
+/* The div that holds product title and product description */
+.product-info-container {
+    padding-left:20px;
+    padding-right:10px;
+    float:left;
+    width:47%;
+}
+
+/* Specify the look and feel of the product title */
+.product-info-title {
+    padding-top:15px;
+    font-size:24;
+    font-weight:bold;
+}
+
+/* Specify the look and feel of product description */
+.product-info-description {
+    padding-top:10px;
+    word-wrap:break-word;
+}
+
+/* This hides/reveals the overflow text in product description */
+/* Default to hide overflow text */
+.product-info-description-overflow {
+    display:none;
+}
+
+
+
+/* Specify the color of text in product listing */
+.product-text {
+    color: rgb(75,74,74);
+}
+
+.product-comment-container {
+    
+    width:100%;
+    height:60px;
+    padding-top:5px;
+}
+
+.product-comment-userprofile {
+    float:left;
+}
+
+.product-comment-input-container {
+    float:left;
+    padding-left:5px;
+    padding-top:7px;
+/*
+    width:75%;
+    padding-left:10px;
+    padding-top:7px;
+*/
+}
+.product-comment-input {
+    width:300px;
+    height:30px;
+    border-radius: 3px;
+}
+
+.profile-image {
+    width:40px;
+    height:40px;
+    border-radius:7px;
+}
 
 
